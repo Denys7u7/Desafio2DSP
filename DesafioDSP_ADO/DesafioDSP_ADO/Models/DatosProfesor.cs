@@ -12,7 +12,7 @@ namespace DesafioDSP_ADO.Models
         public string nomProfesor { get; set; }
         public string apellido { get; set; }
         public string despacho { get; set; }
-        public DateTime horariosConsultas { get; set; }
+        public string horariosConsultas { get; set; }
         public string nAreaConocimiento { get; set; }
         public int idAreaConocimiento { get; set; }
     }

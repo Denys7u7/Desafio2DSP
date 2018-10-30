@@ -39,7 +39,7 @@ namespace DesafioDSP_ADO.Models
             }
         }
 
-        public void modificarAsignatura(DatosAsignatura asig)
+        public void modificarAsignatura(int id, DatosAsignatura asig)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace DesafioDSP_ADO.Models
                 com.Parameters.AddWithValue("@limiteAdmision", asig.limiteAdmision);
                 com.Parameters.AddWithValue("@gruposTeoria", asig.gruposTeo);
                 com.Parameters.AddWithValue("@gruposLaboratorio", asig.gruposLab);
-                com.Parameters.AddWithValue("@idMateria", asig.idMateria);
+                com.Parameters.AddWithValue("@idMateria", id);
                 con.Open();
                 com.ExecuteNonQuery();
                 con.Close();
@@ -67,13 +67,13 @@ namespace DesafioDSP_ADO.Models
             }
         }
 
-        public void eliminarAsignatura(DatosAsignatura asig)
+        public void eliminarAsignatura(int id)
         {
             try
             {
                 SqlCommand com = new SqlCommand("eliminarMateria", con);
                 com.CommandType = CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@idMateria", asig.idMateria);
+                com.Parameters.AddWithValue("@idMateria", id);
                 con.Open();
                 com.ExecuteNonQuery();
                 con.Close();

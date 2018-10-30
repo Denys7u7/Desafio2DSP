@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "AgregarMateria";
+}
+
+<h2>AgregarMateria</h2>
+
+<div>
+    <form method="post">
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Materia</label>
+            <div class="col-sm-9">
+                <input type="text" name="materia" class="col-xs-10 col-sm-8"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Codigo</label>
+            <div class="col-sm-9">
+                <input type="text" name="codigo" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Curso</label>
+            <div class="col-sm-9">
+                <input type="text" name="curso" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">ID-Tipo</label>
+            <div class="col-sm-9">
+                <input type="text" name="tipo" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">ID-titulacion</label>
+            <div class="col-sm-9">
+                <input type="text" name="titulacion" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Creditos Teoricos</label>
+            <div class="col-sm-9">
+                <input type="text" name="credT" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Creditos Laboratorio</label>
+            <div class="col-sm-9">
+                <input type="text" name="credL" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Duracion</label>
+            <div class="col-sm-9">
+                <input type="text" name="duracion" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Limite Admision</label>
+            <div class="col-sm-9">
+                <input type="text" name="limite" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Grupos Teoria</label>
+            <div class="col-sm-9">
+                <input type="text" name="grupoT" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Grupos Laboratorio</label>
+            <div class="col-sm-9">
+                <input type="text" name="grupoL" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-9">
+                <input type="submit" value="Agregar" class="btn btn-primary" />
+            </div>
+        </div>
+    </form>
+</div>
+@{ 
+    if (TempData["mensaje"] != null)
+    {
+        <script>alert('@TempData["mensaje"]')</script>
+    }
+}

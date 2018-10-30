@@ -1,0 +1,2 @@
+Seño, use el respaldo, la ultima vez que se uso el query se nos olvido guardar los cambios 
+y no tiene las consultas de los datos, pero la BDD ya tiene registros

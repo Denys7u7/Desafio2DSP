@@ -221,3 +221,7 @@ as
 begin
 	select * from profesor;
 end
+
+use Desafio
+
+select * from materia

@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Desafio DSP";
+}
+
+<h2>Listado de Materias</h2>
+<div class="row">
+    <table class="table table-bordered table-hover col-md-12">
+        <thead>
+            <th>ID</th>
+            <th>Materia</th>
+            <th>Codigo</th>
+            <th>Curso</th>
+            <th>Tipo</th>
+            <th>Titulacion</th>
+            <th>Creditos Teoricos</th>
+            <th>Creditos Laboratorio</th>
+            <th>Duracion</th>
+            <th>Limite Admision</th>
+            <th>Grupos Teoria</th>
+            <th>Grupos Laboratorio</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            @{
+                foreach (System.Data.DataRow dr in ViewBag.emp.Rows)
+                {
+                    <tr>
+                        <td>@dr["ID"]</td>
+                        <td>@dr["Nombre"]</td>
+                        <td>@dr["Codigo"]</td>
+                        <td>@dr["Curso"]</td>
+                        <td>@dr["Tipo"]</td>
+                        <td>@dr["Titulacion"]</td>
+                        <td>@dr["Creditos Teoricos"]</td>
+                        <td>@dr["creditos Laboratorio"]</td>
+                        <td>@dr["Duracion"]</td>
+                        <td>@dr["Limite Admision"]</td>
+                        <td>@dr["Grupos Teoria"]</td>
+                        <td>@dr["Grupos Laboratorio"]</td>
+                        <td>
+                            <a href="/Home/actualizarMateria?id=@dr["ID"]">Actualizar</a>
+                            <a href="/Home/borrarMateria?id=@dr["ID"]">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+    <style>
+        *{
+            padding:5px 10px;
+        }
+    </style>
+</div>
+
