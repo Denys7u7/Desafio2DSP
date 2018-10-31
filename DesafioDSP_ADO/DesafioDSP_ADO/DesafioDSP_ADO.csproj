@@ -135,6 +135,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfesoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -158,6 +159,9 @@
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\AgregarMateria.cshtml" />
     <Content Include="Views\Home\actualizarMateria.cshtml" />
+    <Content Include="Views\Profesores\Index.cshtml" />
+    <Content Include="Views\Profesores\agregarProfesor.cshtml" />
+    <Content Include="Views\Profesores\actualizarProfesor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

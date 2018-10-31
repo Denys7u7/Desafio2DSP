@@ -4,6 +4,7 @@
 }
 
 <h2>Listado de Materias</h2>
+<a href="/Home/AgregarMateria" class="btn-primary">Agregar Materia</a><a href="/Profesores/Index" class="btn-primary">Administrar Profesores</a>
 <div class="row">
     <table class="table table-bordered table-hover col-md-12">
         <thead>
@@ -39,8 +40,8 @@
                         <td>@dr["Grupos Teoria"]</td>
                         <td>@dr["Grupos Laboratorio"]</td>
                         <td>
-                            <a href="/Home/actualizarMateria?id=@dr["ID"]">Actualizar</a>
-                            <a href="/Home/borrarMateria?id=@dr["ID"]">Eliminar</a>
+                            <a href="/Home/actualizarMateria?id=@dr["ID"]" class="btn-success">Actualizar</a>
+                            <a href="/Home/borrarMateria?id=@dr["ID"]" class="btn-danger">Eliminar</a>
                         </td>
                     </tr>
                 }

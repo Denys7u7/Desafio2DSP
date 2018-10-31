@@ -3,13 +3,12 @@
     ViewBag.Title = "actualizarMateria";
 }
 
-<h2>actualizarMateria</h2>
+<h2>Actualizar Materia</h2>
 
 <div>
     @{
         foreach (System.Data.DataRow dr in ViewBag.emp.Rows)
         {
-
             <form method="post">
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right">Materia</label>
@@ -79,7 +78,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-9">
-                        <input type="submit" value="Agregar" class="btn btn-primary" />
+                        <input type="submit" value="Guardar Cambios" class="btn btn-primary" />
                     </div>
                 </div>
             </form>

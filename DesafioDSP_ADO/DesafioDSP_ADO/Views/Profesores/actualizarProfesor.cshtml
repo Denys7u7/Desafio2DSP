@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "actualizarProfesor";
+}
+
+<h2>Actualizar Profesor</h2>
+
+<div>
+    @{
+        foreach (System.Data.DataRow dr in ViewBag.emp.Rows)
+        {
+            <form method="post">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">Nombres</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="nombres" value="@dr["nombre"]" class="col-xs-10 col-sm-8" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">Apellidos</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="apellidos" value="@dr["apellido"]" class="col-xs-10 col-sm-8" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">Despacho</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="despacho" value="@dr["despacho"]" class="col-xs-10 col-sm-8" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">Horario Consulta</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="consultas" value="@dr["horario_Consultas"]" class="col-xs-10 col-sm-8" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">Area de Conocimiento</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="area" value="@dr["id_area_conocimiento"]" class="col-xs-10 col-sm-8" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <input type="submit" value="Guardar Cambios" class="btn btn-primary" />
+                    </div>
+                </div>
+            </form>
+            }
+        }
+</div>
+@{
+    if (TempData["mensaje"] != null)
+    {
+        <script>alert('@TempData["mensaje"]')</script>
+    }
+}
+

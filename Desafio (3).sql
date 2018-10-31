@@ -225,3 +225,49 @@ end
 use Desafio
 
 select * from materia
+
+create proc verProfesById
+(
+@id int
+) with encryption as
+begin
+	select * from profesor where id_profesor = @id;
+end
+
+create proc verProfe
+as
+begin
+	select profesor.id_profesor as ID, profesor.nombre as Nombres, profesor.apellido as Apellidos, profesor.despacho as Despacho,
+	profesor.horario_Consultas as [Horario de consultas], areaConocimiento.narea_conocimiento as [Area de conocimiento],
+	departamento.ndepartamento as [Departamento]  from profesor join areaConocimiento on 
+	profesor.id_area_conocimiento = areaConocimiento.id_area_conocimiento join departamento on
+	areaConocimiento.id_departamento = departamento.id_departamento;
+end
+
+exec insertarProfe 'Jose Luis','Cruz Perez','JLC503','Lunes a Viernes de 5am a 6am',1;
+exec insertarProfe 'Josue Samuel','Hernandez Gaitan','JSH503','Martes y Viernes de 8am a 7am',1;
+exec insertarProfe 'Kevin Nelson','Marroquin','KNM503','Viernes de 4pm a 6pm',2;
+exec insertarProfe 'Henry','Cardoza Dimas','HCD503','Lunes 8am a 9am',2;
+exec insertarProfe 'Steeven Enrique','Inestroza','STI503','Lunes a Viernes de 5am a 6am',3;
+exec insertarProfe 'Hugo Luis','Lopez','HLL503','Lunes a Viernes de 7am a 10am',3;
+
+exec verProfe
+
+select * from profesor
+
+exec modificarProfe 1,'Jose','Cruz Perez','JLC503','Lunes a Viernes de 5am a 6am',1;
+
+create proc modificarProfe
+(
+@id_profesor int,
+@nombre varchar(100),
+@apellido varchar(100),
+@despacho varchar(6),
+@horario_Consultas varchar(150),
+@id_area_conocimiento int
+) as
+begin
+	update profesor set nombre=@nombre, apellido=@apellido,despacho=@despacho,
+	horario_Consultas=@horario_Consultas, id_area_conocimiento=@id_area_conocimiento
+	where id_profesor=@id_profesor
+end

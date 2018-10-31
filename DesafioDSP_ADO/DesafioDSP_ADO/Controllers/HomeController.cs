@@ -40,7 +40,7 @@ namespace DesafioDSP_ADO.Controllers
             asig.gruposLab = fc["grupoL"];
             dblayer.agregarAsignatura(asig);
             TempData["mensaje"] = "Materia agregada correctamente";
-            return View();
+            return RedirectToAction("Index");
         }
 
         public ActionResult actualizarMateria(int id)

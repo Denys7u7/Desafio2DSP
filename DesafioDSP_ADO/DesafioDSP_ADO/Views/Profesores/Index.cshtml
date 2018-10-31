@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Desafio DSP";
+}
+
+<h2>Listado de Profesores</h2>
+<a href="/Profesores/agregarProfesor" class="btn-primary">Agregar Profesor</a><a href="/Home/Index" class="btn-primary">Administrar Materias</a>
+<div class="row">
+    <table class="table table-bordered table-hover col-md-12">
+        <thead>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Despacho</th>
+        <th>Horario de Consultas</th>
+        <th>Area de Conocimiento</th>
+        <th>Despartamento</th>
+        <th>Acciones</th>
+        </thead>
+        <tbody>
+            @{
+                foreach (System.Data.DataRow dr in ViewBag.emp.Rows)
+                {
+                    <tr>
+                        <td>@dr["ID"]</td>
+                        <td>@dr["Nombres"]</td>
+                        <td>@dr["Apellidos"]</td>
+                        <td>@dr["Despacho"]</td>
+                        <td>@dr["Horario de consultas"]</td>
+                        <td>@dr["Area de conocimiento"]</td>
+                        <td>@dr["Departamento"]</td>
+                        <td>
+                            <a href="/Profesores/actualizarProfesor?id=@dr["ID"]" class="btn-success">Actualizar</a>
+                            <a href="/Profesores/borrarProfesor?id=@dr["ID"]" class="btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+    <style>
+        * {
+            padding: 5px 10px;
+        }
+    </style>
+</div>

@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "agregarProfesor";
+}
+
+<h2>Agregar Profesor</h2>
+
+<div>
+    <form method="post">
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Nombres</label>
+            <div class="col-sm-9">
+                <input type="text" name="nombres" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Apellidos</label>
+            <div class="col-sm-9">
+                <input type="text" name="apellidos" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Despacho</label>
+            <div class="col-sm-9">
+                <input type="text" name="despacho" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Horario Consulta</label>
+            <div class="col-sm-9">
+                <input type="text" name="consultas" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Area de Conocimiento</label>
+            <div class="col-sm-9">
+                <input type="text" name="area" class="col-xs-10 col-sm-8" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-9">
+                <input type="submit" value="Agregar" class="btn btn-primary" />
+            </div>
+        </div>
+    </form>
+</div>
+@{
+    if (TempData["mensaje"] != null)
+    {
+        <script>alert('@TempData["mensaje"]')</script>
+    }
+}
+
+

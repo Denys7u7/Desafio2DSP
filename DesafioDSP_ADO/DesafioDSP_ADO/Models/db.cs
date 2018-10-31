@@ -105,7 +105,7 @@ namespace DesafioDSP_ADO.Models
             }
         }
 
-        public void modificarProfesor(DatosProfesor prof)
+        public void modificarProfesor(DatosProfesor prof, int id)
         {
             try
             {
@@ -116,7 +116,7 @@ namespace DesafioDSP_ADO.Models
                 com.Parameters.AddWithValue("@despacho", prof.despacho);
                 com.Parameters.AddWithValue("@horario_Consultas", prof.horariosConsultas);
                 com.Parameters.AddWithValue("@id_area_conocimiento", prof.idAreaConocimiento);
-                com.Parameters.AddWithValue("@id_profesor", prof.idProfesor);
+                com.Parameters.AddWithValue("@id_profesor", id);
                 con.Open();
                 com.ExecuteNonQuery();
                 con.Close();
@@ -127,13 +127,13 @@ namespace DesafioDSP_ADO.Models
             }
         }
 
-        public void eliminarProfesor(DatosProfesor prof)
+        public void eliminarProfesor(int id)
         {
             try
             {
                 SqlCommand com = new SqlCommand("eliminarProfe", con);
                 com.CommandType = CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@id_profesor", prof.idProfesor);
+                com.Parameters.AddWithValue("@id_profesor", id);
                 con.Open();
                 com.ExecuteNonQuery();
                 con.Close();
@@ -144,11 +144,11 @@ namespace DesafioDSP_ADO.Models
             }
         }
 
-        public DataSet verMaterias(int idTipo)
+        public DataSet verMaterias(int id)
         {
             SqlCommand com = new SqlCommand("mostrarMaterias", con);
             com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@idTipo", idTipo);
+            com.Parameters.AddWithValue("@idTipo", id);
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -167,8 +167,19 @@ namespace DesafioDSP_ADO.Models
 
         public DataSet verProfesores()
         {
-            SqlCommand com = new SqlCommand("verProfesores", con);
+            SqlCommand com = new SqlCommand("verProfe", con);
             com.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        public DataSet verProfesoresById(int id)
+        {
+            SqlCommand com = new SqlCommand("verProfesById", con);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@id", id);
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataSet ds = new DataSet();
             da.Fill(ds);
